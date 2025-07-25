@@ -35,7 +35,7 @@ jobs:
           echo "DISTRO=${{ matrix.distro }}" >> $GITHUB_ENV
           mkdir -p ${WORKSPACE}
           mkdir -p ${SDK_DIR}
-          sudo apt-get install -y# python3-vcstool
+          sudo apt-get install -y python3-vcstool
 
       - name: Set up SDK
         run: |
