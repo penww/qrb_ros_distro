@@ -35,6 +35,8 @@ jobs:
           echo "DISTRO=${{ matrix.distro }}" >> $GITHUB_ENV
           mkdir -p ${WORKSPACE}
           mkdir -p ${SDK_DIR}
+          curl -s https://packagecloud.io/install/repositories/dirk-thomas/vcstool/script.deb.sh | sudo bash
+          sudo apt-get update
           sudo apt-get install -y python3-vcstool
 
       - name: Set up SDK
