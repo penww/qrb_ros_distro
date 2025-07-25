@@ -35,6 +35,7 @@ jobs:
           echo "DISTRO=${{ matrix.distro }}" >> $GITHUB_ENV
           mkdir -p ${WORKSPACE}
           mkdir -p ${SDK_DIR}
+          sudo apt-get install -y# python3-vcstool
 
       - name: Set up SDK
         run: |
@@ -65,7 +66,7 @@ jobs:
       - name: Sync and build
         run: |
           ls ${{ github.workspace }}
-          pip install vcstool2
+          #pip install vcstool2
           export PATH=/home/ubuntu/.local/bin:$PATH
           vcs import --input ${{ github.workspace }}/${{ github.event.repository.name }}/jazzy/repo.yaml ${WORKSPACE}
 
